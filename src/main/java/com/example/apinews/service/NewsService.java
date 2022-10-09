@@ -15,9 +15,9 @@ public class NewsService {
 
     public List<News> findTopNews(Role role) {
         if(role == Role.ACCOUNTANT) {
-            return  newsRepository.findTopNews(List.of("финансы"));
+            return  newsRepository.findTopNewsIn(List.of("финансы"));
         } else {
-            return newsRepository.findTopNews(List.of("Бизнес"));
+            return newsRepository.findTopNewsNotIn(List.of("финансы"));
         }
     }
 }
