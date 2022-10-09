@@ -1,4 +1,4 @@
-package com.example.apinews.enity;
+package com.example.apinews.domain;
 
 public enum Role {
     DIRECTOR, ACCOUNTANT

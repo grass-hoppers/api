@@ -1,4 +1,4 @@
-package com.example.apinews.enity;
+package com.example.apinews.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @Builder
-@Table(name = "news_processed")
+@Table(name = "news_relevance")
 @NoArgsConstructor
 @AllArgsConstructor
 public class News {
@@ -25,17 +25,8 @@ public class News {
 
     private String link;
 
-    private Instant publicDate;
-
-    private String topic;
-
-    private String text;
+    private Long date;
 
     @JsonIgnore
-    private Long wordsWeight;
-
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @Enumerated(EnumType.STRING)
-    @JsonIgnore
-    private List<Role> roles;
+    private double importance;
 }
